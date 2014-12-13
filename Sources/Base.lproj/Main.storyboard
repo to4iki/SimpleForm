@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,17 +13,17 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ILd-u2-Ltj" customClass="TextFieldContainer" customModule="SimpleForm" customModuleProvider="target">
-                                <rect key="frame" x="200" y="265" width="200" height="17"/>
+                                <rect key="frame" x="88" y="298" width="200" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="fuD-Qj-SNv"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderBottomWidth">
                                         <real key="value" value="1"/>
@@ -31,13 +31,13 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0xR-2Z-KQl" customClass="TextFieldContainer" customModule="SimpleForm" customModuleProvider="target">
-                                <rect key="frame" x="200" y="292" width="200" height="17"/>
+                                <rect key="frame" x="88" y="325" width="200" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="VWc-rp-Tnc"/>
                                 </constraints>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="0.0"/>
@@ -47,40 +47,70 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roX-kp-hma" customClass="BorderedButton" customModule="SimpleForm" customModuleProvider="target">
-                                <rect key="frame" x="278" y="319" width="44" height="44"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0dk-Kd-vis">
+                                <rect key="frame" x="88" y="352" width="200" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="5Ao-8l-yz4"/>
-                                    <constraint firstAttribute="width" constant="44" id="Bkb-aD-G7D"/>
+                                    <constraint firstAttribute="height" constant="50" id="LGM-TP-ha8"/>
+                                    <constraint firstAttribute="width" constant="200" id="fhg-Pb-wwD"/>
                                 </constraints>
-                                <state key="normal" title="Signin">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
+                                <connections>
+                                    <segue destination="496-4Z-4V0" kind="embed" id="Z6F-dm-j6n"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="ILd-u2-Ltj" secondAttribute="centerX" id="1tu-wT-v2F"/>
+                            <constraint firstItem="0dk-Kd-vis" firstAttribute="top" secondItem="0xR-2Z-KQl" secondAttribute="bottom" constant="10" id="Cei-d5-KSb"/>
                             <constraint firstAttribute="centerX" secondItem="0xR-2Z-KQl" secondAttribute="centerX" id="Ja1-pr-mmx"/>
-                            <constraint firstItem="roX-kp-hma" firstAttribute="top" secondItem="0xR-2Z-KQl" secondAttribute="bottom" constant="10" id="L8G-D4-D4s"/>
-                            <constraint firstAttribute="centerX" secondItem="roX-kp-hma" secondAttribute="centerX" id="SpK-2g-2Jq"/>
+                            <constraint firstAttribute="centerX" secondItem="0dk-Kd-vis" secondAttribute="centerX" id="h1h-dU-qZh"/>
                             <constraint firstItem="0xR-2Z-KQl" firstAttribute="top" secondItem="ILd-u2-Ltj" secondAttribute="bottom" constant="10" id="nMU-YY-ToY"/>
                             <constraint firstAttribute="centerY" secondItem="0xR-2Z-KQl" secondAttribute="centerY" id="y6i-rX-wcr"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="emailField" destination="ILd-u2-Ltj" id="TCD-9m-9x6"/>
                         <outlet property="passwordField" destination="0xR-2Z-KQl" id="ni0-sL-fMo"/>
-                        <outlet property="signinButton" destination="roX-kp-hma" id="WD2-Tl-3a3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="251.5" y="300.5"/>
+        </scene>
+        <!--Signin Button View Controller-->
+        <scene sceneID="fOR-sM-y01">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="496-4Z-4V0" customClass="SigninButtonViewController" customModule="SimpleForm" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="06l-KF-lja"/>
+                        <viewControllerLayoutGuide type="bottom" id="Enh-DD-pYp"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iya-1n-njw">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R89-Us-lUP">
+                                <rect key="frame" x="79" y="10" width="43" height="30"/>
+                                <state key="normal" title="Signin">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="R89-Us-lUP" secondAttribute="centerX" id="8jQ-0w-zci"/>
+                            <constraint firstAttribute="centerY" secondItem="R89-Us-lUP" secondAttribute="centerY" id="lpy-Hl-TsQ"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="signinButton" destination="R89-Us-lUP" id="nsT-6h-zfK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MXE-wh-alr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="251" y="757"/>
         </scene>
     </scenes>
 </document>

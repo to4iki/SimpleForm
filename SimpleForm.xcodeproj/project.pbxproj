@@ -16,6 +16,7 @@
 			<array>
 				<string>4D2640DA19FD3C8F00CB4A7F</string>
 				<string>4D2640F019FD3C8F00CB4A7F</string>
+				<string>4D5A8D341A3C1149002B69A6</string>
 				<string>4D2640D919FD3C8F00CB4A7F</string>
 			</array>
 			<key>isa</key>
@@ -69,7 +70,14 @@
 			<key>projectDirPath</key>
 			<string></string>
 			<key>projectReferences</key>
-			<array/>
+			<array>
+				<dict>
+					<key>ProductGroup</key>
+					<string>4D5A8D361A3C117C002B69A6</string>
+					<key>ProjectRef</key>
+					<string>4D5A8D351A3C117C002B69A6</string>
+				</dict>
+			</array>
 			<key>projectRoot</key>
 			<string></string>
 			<key>targets</key>
@@ -100,6 +108,7 @@
 			<array>
 				<string>4D2640E019FD3C8F00CB4A7F</string>
 				<string>4D2640FF19FD4DF100CB4A7F</string>
+				<string>4D5A8D431A3C1B14002B69A6</string>
 				<string>4D682B9C19FE96E0003116FC</string>
 				<string>4D2640DE19FD3C8F00CB4A7F</string>
 			</array>
@@ -113,7 +122,9 @@
 			<key>buildActionMask</key>
 			<string>2147483647</string>
 			<key>files</key>
-			<array/>
+			<array>
+				<string>4D5A8D3D1A3C11A5002B69A6</string>
+			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
@@ -147,7 +158,9 @@
 			<key>buildRules</key>
 			<array/>
 			<key>dependencies</key>
-			<array/>
+			<array>
+				<string>4D5A8D3F1A3C11B3002B69A6</string>
+			</array>
 			<key>isa</key>
 			<string>PBXNativeTarget</string>
 			<key>name</key>
@@ -200,8 +213,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Sources</string>
 			<key>path</key>
 			<string>Sources</string>
 			<key>sourceTree</key>
@@ -215,8 +226,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>conf</string>
 			<key>path</key>
 			<string>conf</string>
 			<key>sourceTree</key>
@@ -459,8 +468,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Tests</string>
 			<key>path</key>
 			<string>Tests</string>
 			<key>sourceTree</key>
@@ -812,15 +819,128 @@
 			<key>children</key>
 			<array>
 				<string>4D2640DF19FD3C8F00CB4A7F</string>
+				<string>4D5A8D421A3C1B14002B69A6</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>application</string>
 			<key>path</key>
 			<string>application</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D5A8D341A3C1149002B69A6</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D5A8D351A3C117C002B69A6</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Libraries</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D5A8D351A3C117C002B69A6</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.pb-project</string>
+			<key>name</key>
+			<string>EmitterKit.xcodeproj</string>
+			<key>path</key>
+			<string>../../../../src/github.com/aleclarson/emitter-kit/EmitterKit.xcodeproj</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D5A8D361A3C117C002B69A6</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D5A8D3C1A3C117C002B69A6</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D5A8D3B1A3C117C002B69A6</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>4D5A8D351A3C117C002B69A6</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>2</string>
+			<key>remoteGlobalIDString</key>
+			<string>1102850D19C9BCEB0069F253</string>
+			<key>remoteInfo</key>
+			<string>EmitterKit</string>
+		</dict>
+		<key>4D5A8D3C1A3C117C002B69A6</key>
+		<dict>
+			<key>fileType</key>
+			<string>wrapper.framework</string>
+			<key>isa</key>
+			<string>PBXReferenceProxy</string>
+			<key>path</key>
+			<string>EmitterKit.framework</string>
+			<key>remoteRef</key>
+			<string>4D5A8D3B1A3C117C002B69A6</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>4D5A8D3D1A3C11A5002B69A6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D5A8D3C1A3C117C002B69A6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D5A8D3E1A3C11B3002B69A6</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>4D5A8D351A3C117C002B69A6</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>1102850C19C9BCEB0069F253</string>
+			<key>remoteInfo</key>
+			<string>EmitterKit</string>
+		</dict>
+		<key>4D5A8D3F1A3C11B3002B69A6</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>EmitterKit</string>
+			<key>targetProxy</key>
+			<string>4D5A8D3E1A3C11B3002B69A6</string>
+		</dict>
+		<key>4D5A8D421A3C1B14002B69A6</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>SigninButtonViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D5A8D431A3C1B14002B69A6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D5A8D421A3C1B14002B69A6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>4D682B9B19FE96E0003116FC</key>
 		<dict>

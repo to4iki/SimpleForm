@@ -7,43 +7,88 @@
 //
 
 import UIKit
+import EmitterKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+struct SigninViewScope {
+    var email: String = ""
+    var password: String = ""
+}
+
+class SigninContext {
     
-    @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var signinButton: UIButton!
+    // change event
+    let event = Event<Bool>()
+    
+    var scope: SigninViewScope = SigninViewScope() {
+        didSet {
+            event.emit(!anyNotEnterd())
+        }
+    }
+    
+    private func anyNotEnterd() -> Bool {
+        if scope.email == "" || scope.password == "" {
+            return true
+        } else {
+            return false
+        }
+    }
+}
+
+class ViewController: UIViewController, UITextFieldDelegate, SigninButtonViewControllerDelegate {
+    
+    @IBOutlet private weak var emailField: UITextField!
+    @IBOutlet private weak var passwordField: UITextField!
+    private weak var signinButton: SigninButtonViewController?
+    
+    private var context = SigninContext()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // サブビューから関係コントローラーを抽出
+        for subview in self.childViewControllers{
+            switch subview {
+            case let subview as SigninButtonViewController:
+                self.signinButton = subview
+            default:
+                break
+            }
+        }
+        
         self.emailField.delegate = self
         self.passwordField.delegate = self
-        self.signinButton.addTarget(self, action: "onSignin", forControlEvents: .TouchUpInside)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    func onSignin() {
-        println("signin")
+        self.signinButton?.delegate = self
     }
     
     // MARK: - UITextFieldDelegate
+    
+    /**
+    scopeにset
+    */
+    func textFieldDidEndEditing(textField: UITextField) {
+        switch textField {
+        case emailField:
+            context.scope.email = emailField.text
+        case passwordField:
+            context.scope.password = passwordField.text
+        default:
+            break
+        }
+    }
     
     /**
     エンターを押した時
     */
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == self.emailField {
-            self.passwordField?.becomeFirstResponder() //フォーカスを当てる
+            passwordField?.becomeFirstResponder()
         } else {
-            onSignin()
+            resignFirstResponderAtControls()
         }
         
         return true
     }
-
+    
     /**
     タッチ開始時
     */
@@ -58,5 +103,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.emailField?.resignFirstResponder()
         self.passwordField?.resignFirstResponder()
     }
+    
+    // MARK: - SigninButtonViewControllerDelegate
+    
+    func getSigninContext() -> SigninContext {
+        return context
+    }
 }
-
