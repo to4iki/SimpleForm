@@ -9,6 +9,21 @@
 import UIKit
 import EmitterKit
 
+final class MainStoryBoard {
+    
+    let storyboard: UIStoryboard
+    let mainViewController: ViewController
+    let confirmViewController: ConfirmViewController
+    
+    init() {
+        self.storyboard = UIStoryboard(name: "Main", bundle: NSBundle(forClass: ConfirmViewController.self))
+        self.mainViewController =
+            self.storyboard.instantiateViewControllerWithIdentifier("ViewController") as ViewController
+        self.confirmViewController =
+            self.storyboard.instantiateViewControllerWithIdentifier("ConfirmViewController") as ConfirmViewController
+    }
+}
+
 struct SigninViewScope {
     var email: String = ""
     var password: String = ""
@@ -45,6 +60,8 @@ class ViewController: UIViewController, UITextFieldDelegate, SigninButtonViewCon
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.setHidesBackButton(true, animated: false)
+        
         // サブビューから関係コントローラーを抽出
         for subview in self.childViewControllers{
             switch subview {
@@ -71,7 +88,7 @@ class ViewController: UIViewController, UITextFieldDelegate, SigninButtonViewCon
             context.scope.email = emailField.text
         case passwordField:
             context.scope.password = passwordField.text
-        default:
+        default: 
             break
         }
     }
@@ -108,5 +125,13 @@ class ViewController: UIViewController, UITextFieldDelegate, SigninButtonViewCon
     
     func getSigninContext() -> SigninContext {
         return context
+    }
+    
+    func execSunccessEvent() {
+        navigationController?.pushViewController(MainStoryBoard().confirmViewController, animated: true)
+    }
+    
+    func execErrorEvent(error: String) {
+        Dialog.alert(self, title: "error", message: error)
     }
 }

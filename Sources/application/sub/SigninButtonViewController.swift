@@ -11,6 +11,8 @@ import EmitterKit
 
 protocol SigninButtonViewControllerDelegate: class {
     func getSigninContext() -> SigninContext
+    func execSunccessEvent()
+    func execErrorEvent(error: String)
 }
 
 class SigninButtonViewController: UIViewController {
@@ -40,6 +42,14 @@ class SigninButtonViewController: UIViewController {
     }
     
     func onSignin() {
-        println("signin")
+        let context = delegate!.getSigninContext()
+        
+        // dummy
+        // 本来はこのタイミングでDB問い合わせ
+        if context.scope.email == "test@example.com" && context.scope.password == "test" {
+            delegate!.execSunccessEvent()
+        } else {
+            delegate!.execErrorEvent("arg error")
+        }
     }
 }
