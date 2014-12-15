@@ -10,6 +10,31 @@
 	<string>46</string>
 	<key>objects</key>
 	<dict>
+		<key>38F7FFE8784BCBA373A9ED7F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FCA03AD26B1C63D6FE3F5434</string>
+				<string>85FEB4C0874ADA8A532D58DE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D0D459C1A3F1EBA00B9AFE7</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>SimpleForm-Bridging-Header.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>4D2640CF19FD3C8F00CB4A7F</key>
 		<dict>
 			<key>children</key>
@@ -18,6 +43,9 @@
 				<string>4D2640F019FD3C8F00CB4A7F</string>
 				<string>4D5A8D341A3C1149002B69A6</string>
 				<string>4D2640D919FD3C8F00CB4A7F</string>
+				<string>38F7FFE8784BCBA373A9ED7F</string>
+				<string>B7137B7817935AD812B3724D</string>
+				<string>4D0D459C1A3F1EBA00B9AFE7</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -113,6 +141,7 @@
 				<string>4D682B9C19FE96E0003116FC</string>
 				<string>4DB06A801A3D8D1900B22B76</string>
 				<string>4D2640DE19FD3C8F00CB4A7F</string>
+				<string>4D5664291A3F2EB600A488A0</string>
 			</array>
 			<key>isa</key>
 			<string>PBXSourcesBuildPhase</string>
@@ -126,6 +155,7 @@
 			<key>files</key>
 			<array>
 				<string>4D5A8D3D1A3C11A5002B69A6</string>
+				<string>6A37D73C450732CBCA55E3B0</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -153,9 +183,11 @@
 			<string>4D2640F719FD3C8F00CB4A7F</string>
 			<key>buildPhases</key>
 			<array>
+				<string>C58E47B9CDD6F56EAD1B1240</string>
 				<string>4D2640D419FD3C8F00CB4A7F</string>
 				<string>4D2640D519FD3C8F00CB4A7F</string>
 				<string>4D2640D619FD3C8F00CB4A7F</string>
+				<string>A6195DECD54B20CB8B2E2256</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -681,16 +713,24 @@
 		</dict>
 		<key>4D2640F819FD3C8F00CB4A7F</key>
 		<dict>
+			<key>baseConfigurationReference</key>
+			<string>FCA03AD26B1C63D6FE3F5434</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
 				<string>AppIcon</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
 				<key>INFOPLIST_FILE</key>
 				<string>Sources/conf/Info.plist</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<string>$(inherited) @executable_path/Frameworks</string>
 				<key>PRODUCT_NAME</key>
 				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>SimpleForm-Bridging-Header.h</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -699,16 +739,22 @@
 		</dict>
 		<key>4D2640F919FD3C8F00CB4A7F</key>
 		<dict>
+			<key>baseConfigurationReference</key>
+			<string>85FEB4C0874ADA8A532D58DE</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
 				<string>AppIcon</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
 				<key>INFOPLIST_FILE</key>
 				<string>Sources/conf/Info.plist</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<string>$(inherited) @executable_path/Frameworks</string>
 				<key>PRODUCT_NAME</key>
 				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>SimpleForm-Bridging-Header.h</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -831,6 +877,26 @@
 			<string>application</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D5664281A3F2EB600A488A0</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Hud.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D5664291A3F2EB600A488A0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D5664281A3F2EB600A488A0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>4D5A8D341A3C1149002B69A6</key>
 		<dict>
@@ -988,8 +1054,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>sub</string>
 			<key>path</key>
 			<string>sub</string>
 			<key>sourceTree</key>
@@ -1033,6 +1097,7 @@
 			<key>children</key>
 			<array>
 				<string>4DC4E5531A3D807C00838A7A</string>
+				<string>4D5664281A3F2EB600A488A0</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1060,6 +1125,123 @@
 			<string>4DC4E5531A3D807C00838A7A</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>6A37D73C450732CBCA55E3B0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FA54D78D933C2BEBEBA585B2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>85FEB4C0874ADA8A532D58DE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods/Pods.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A6195DECD54B20CB8B2E2256</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>B7137B7817935AD812B3724D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FA54D78D933C2BEBEBA585B2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C58E47B9CDD6F56EAD1B1240</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>FA54D78D933C2BEBEBA585B2</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>FCA03AD26B1C63D6FE3F5434</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods/Pods.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 	</dict>
 	<key>rootObject</key>

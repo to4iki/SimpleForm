@@ -1,0 +1,15 @@
+PODS:
+  - FontAwesomeKit/Core (2.2.0)
+  - FontAwesomeKit/IonIcons (2.2.0):
+    - FontAwesomeKit/Core
+  - MBProgressHUD (0.9)
+
+DEPENDENCIES:
+  - FontAwesomeKit/IonIcons
+  - MBProgressHUD
+
+SPEC CHECKSUMS:
+  FontAwesomeKit: 61f0b4f12f1b11b7489bc7d1507a8692547f3857
+  MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
+
+COCOAPODS: 0.35.0

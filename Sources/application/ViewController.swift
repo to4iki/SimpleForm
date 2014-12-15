@@ -128,7 +128,14 @@ class ViewController: UIViewController, UITextFieldDelegate, SigninButtonViewCon
     }
     
     func execSunccessEvent() {
-        navigationController?.pushViewController(MainStoryBoard().confirmViewController, animated: true)
+        let delay = 3.0 * Double(NSEC_PER_SEC)
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        
+        Hud.showSuccessWithStatus(self.view, text: "Success", afterDelay: delay)
+        dispatch_after(time, dispatch_get_main_queue(), {
+            self.navigationController?.pushViewController(MainStoryBoard().confirmViewController, animated: true)
+            return
+        })
     }
     
     func execErrorEvent(error: String) {
