@@ -128,17 +128,24 @@ class ViewController: UIViewController, UITextFieldDelegate, SigninButtonViewCon
     }
     
     func execSunccessEvent() {
-        let delay = 3.0 * Double(NSEC_PER_SEC)
-        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        
-        Hud.showSuccessWithStatus(self.view, text: "Success", afterDelay: delay)
-        dispatch_after(time, dispatch_get_main_queue(), {
-            self.navigationController?.pushViewController(MainStoryBoard().confirmViewController, animated: true)
-            return
-        })
+        pushViewControllerWithDelay()
     }
     
     func execErrorEvent(error: String) {
         Dialog.alert(self, title: "error", message: error)
+    }
+    
+    private lazy var pushViewControllerWithDelay: (() -> ()) = self.setupPushViewControllerWithDelay()
+    
+    private func setupPushViewControllerWithDelay() -> (() -> ()) {
+        let delay = NSTimeInterval(2.0)
+        let queue = dispatch_get_main_queue()
+        let action: (() -> ()) = { [weak self] in
+            self?.navigationController?.pushViewController(MainStoryBoard().confirmViewController, animated: true)
+            return
+        }
+        
+        Hud.showSuccessWithStatus(self.view, text: "Success", afterDelay: delay)
+        return SimpleForm.debounce(delay, queue: queue, action: action)
     }
 }
