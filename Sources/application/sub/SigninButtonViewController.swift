@@ -24,8 +24,8 @@ class SigninButtonViewController: UIViewController {
     weak var delegate: SigninButtonViewControllerDelegate? {
         didSet {
             if let delegate = delegate {
-                contextListener = delegate.getSigninContext().event.on { [weak self] (isAllEnterd: Bool) in
-                    self?.signinButton.enabled = isAllEnterd; return
+                contextListener = delegate.getSigninContext().event.on { [weak self] (valid: Bool) in
+                    self?.signinButton.enabled = valid; return
                 }
                 
             } else if let oldDelegate = oldValue {

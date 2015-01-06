@@ -27,6 +27,7 @@ final class MainStoryBoard {
 struct SigninViewScope {
     var email: String = ""
     var password: String = ""
+    var passwordVerification: String = ""
 }
 
 class SigninContext {
@@ -36,16 +37,24 @@ class SigninContext {
     
     var scope: SigninViewScope = SigninViewScope() {
         didSet {
-            event.emit(!anyNotEnterd())
+            event.emit(valid())
         }
     }
     
-    private func anyNotEnterd() -> Bool {
-        if scope.email == "" || scope.password == "" {
-            return true
-        } else {
-            return false
-        }
+    private lazy var valid: (() -> Bool) = { () in
+        self.required && self.minLength
+    }
+    
+    private var required: Bool {
+        return scope.email != "" || scope.password != "" ? true : false
+    }
+    
+    private var minLength: Bool {
+        return countElements(scope.password) >= 4
+    }
+    
+    private var samePassword: Bool {
+        return scope.password == scope.passwordVerification
     }
 }
 
@@ -53,6 +62,7 @@ class ViewController: UIViewController, UITextFieldDelegate, SigninButtonViewCon
     
     @IBOutlet private weak var emailField: UITextField!
     @IBOutlet private weak var passwordField: UITextField!
+    @IBOutlet private weak var passwordVerificationField: UITextField!
     private weak var signinButton: SigninButtonViewController?
     
     private var context = SigninContext()
@@ -74,6 +84,7 @@ class ViewController: UIViewController, UITextFieldDelegate, SigninButtonViewCon
         
         self.emailField.delegate = self
         self.passwordField.delegate = self
+        self.passwordVerificationField.delegate = self
         self.signinButton?.delegate = self
     }
     
@@ -88,7 +99,9 @@ class ViewController: UIViewController, UITextFieldDelegate, SigninButtonViewCon
             context.scope.email = emailField.text
         case passwordField:
             context.scope.password = passwordField.text
-        default: 
+        case passwordVerificationField:
+            context.scope.passwordVerification = passwordVerificationField.text
+        default:
             break
         }
     }
@@ -97,9 +110,12 @@ class ViewController: UIViewController, UITextFieldDelegate, SigninButtonViewCon
     エンターを押した時
     */
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if textField == self.emailField {
-            passwordField?.becomeFirstResponder()
-        } else {
+        switch textField {
+        case emailField:
+            passwordField.becomeFirstResponder()
+        case passwordField:
+            passwordVerificationField.becomeFirstResponder()
+        default:
             resignFirstResponderAtControls()
         }
         
@@ -117,8 +133,9 @@ class ViewController: UIViewController, UITextFieldDelegate, SigninButtonViewCon
     フォーカスを外す
     */
     private func resignFirstResponderAtControls() {
-        self.emailField?.resignFirstResponder()
-        self.passwordField?.resignFirstResponder()
+        self.emailField.resignFirstResponder()
+        self.passwordField.resignFirstResponder()
+        self.passwordVerificationField.resignFirstResponder()
     }
     
     // MARK: - SigninButtonViewControllerDelegate
