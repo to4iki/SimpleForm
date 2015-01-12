@@ -13,6 +13,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="Slx-yP-XuH">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zek-qh-pVz">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="vq0-O0-tf0"/>
+                                    </constraints>
+                                </containerView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="Zek-qh-pVz" firstAttribute="leading" secondItem="Slx-yP-XuH" secondAttribute="leading" id="JkW-u0-dH4"/>
+                                <constraint firstItem="Zek-qh-pVz" firstAttribute="top" secondItem="Slx-yP-XuH" secondAttribute="top" id="e3u-IX-MxV"/>
+                                <constraint firstAttribute="trailing" secondItem="Zek-qh-pVz" secondAttribute="trailing" id="epD-lr-TO3"/>
+                                <constraint firstAttribute="bottom" secondItem="Zek-qh-pVz" secondAttribute="bottom" id="mk4-oo-D99"/>
+                            </constraints>
+                        </view>
                         <sections>
                             <tableViewSection id="tdx-T0-uie">
                                 <cells>
@@ -46,6 +65,7 @@
                     <navigationItem key="navigationItem" id="QAa-vR-4Wx"/>
                     <connections>
                         <outlet property="anyTextField" destination="OHv-BZ-AVO" id="1xF-2l-PHJ"/>
+                        <outlet property="editButtonView" destination="Zek-qh-pVz" id="zAl-je-zQ3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="THf-TG-FFS" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -24,14 +24,28 @@ final class SingleTextFormStoryBoard {
 
 class SingleTextFormTableViewController: UITableViewController {
     
-    @IBOutlet private weak var anyTextField: UITextField!
+    @IBOutlet private weak var anyTextField: UITextField!    
+    @IBOutlet weak var editButtonView: UIView!
     
     private var mode: AccountSettingMode!
+    
+    private weak var editButton: EditButtonViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupLayout()
+        setupEditButton()
+    }
+    
+    private func setupLayout() {
         navigationItem.title = mode.toNavigationTitle()
         anyTextField.placeholder = mode.textFieldPlaceholder
+    }
+    
+    private func setupEditButton() {
+        if editButton != nil { return }
+        editButton = EditButtonStoryBoard().viewController
+        self.showContainerViewController(editButton, parentView: editButtonView)
     }
 }

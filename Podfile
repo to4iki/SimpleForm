@@ -3,3 +3,4 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 pod 'MBProgressHUD'
 pod 'FontAwesomeKit/IonIcons'
+pod 'Snap', :git => 'https://github.com/Masonry/Snap.git'

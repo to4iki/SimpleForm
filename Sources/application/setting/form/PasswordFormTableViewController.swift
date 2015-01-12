@@ -21,8 +21,20 @@ final class PasswordFormStoryBoard {
 }
 
 class PasswordFormTableViewController: UITableViewController {
-
+    
+    @IBOutlet weak var editButtonView: UIView!
+    
+    private weak var editButton: EditButtonViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupEditButton()
+    }
+    
+    private func setupEditButton() {
+        if editButton != nil { return }
+        editButton = EditButtonStoryBoard().viewController
+        self.showContainerViewController(editButton, parentView: editButtonView)
     }
 }

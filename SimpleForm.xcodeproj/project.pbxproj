@@ -10,6 +10,13 @@
 	<string>46</string>
 	<key>objects</key>
 	<dict>
+		<key>074612EBE5A8389BF5AD51FE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>ED5A5FE3E45A6F5551477B80</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>38F7FFE8784BCBA373A9ED7F</key>
 		<dict>
 			<key>children</key>
@@ -21,17 +28,6 @@
 			<string>PBXGroup</string>
 			<key>name</key>
 			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4D0D459C1A3F1EBA00B9AFE7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SimpleForm-Bridging-Header.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -81,11 +77,10 @@
 			<array>
 				<string>4D1B630D1A63ECF90071CFD0</string>
 				<string>4D1B630F1A63EF680071CFD0</string>
+				<string>4D1D422C1A640BF000262EB2</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>form</string>
 			<key>path</key>
 			<string>form</string>
 			<key>sourceTree</key>
@@ -171,6 +166,79 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>4D1D422A1A640AD100262EB2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>EditButtonViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D1D422B1A640AD100262EB2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D1D422A1A640AD100262EB2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D1D422C1A640BF000262EB2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>path</key>
+			<string>EditButton.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D1D422D1A640BF000262EB2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D1D422C1A640BF000262EB2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D1D422E1A640E4E00262EB2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D1D422F1A640EA100262EB2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>common</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D1D422F1A640EA100262EB2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UITableViewController+SimpleForm.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D1D42301A640EA100262EB2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D1D422F1A640EA100262EB2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>4D1DF7141A5C1ED800283CD7</key>
 		<dict>
 			<key>fileEncoding</key>
@@ -201,7 +269,7 @@
 				<string>4D2640D919FD3C8F00CB4A7F</string>
 				<string>38F7FFE8784BCBA373A9ED7F</string>
 				<string>B7137B7817935AD812B3724D</string>
-				<string>4D0D459C1A3F1EBA00B9AFE7</string>
+				<string>4DF1E7C31A641C36001A0AD5</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -292,9 +360,11 @@
 			<array>
 				<string>4D1DF7151A5C1ED800283CD7</string>
 				<string>4D2640E019FD3C8F00CB4A7F</string>
+				<string>4D1D42301A640EA100262EB2</string>
 				<string>4D2640FF19FD4DF100CB4A7F</string>
 				<string>4D1B630B1A63E5B00071CFD0</string>
 				<string>4D5A8D431A3C1B14002B69A6</string>
+				<string>4D1D422B1A640AD100262EB2</string>
 				<string>4D426D841A63D88E002B793E</string>
 				<string>4D1B63121A63F0130071CFD0</string>
 				<string>4DC4E5541A3D807C00838A7A</string>
@@ -315,7 +385,8 @@
 			<key>files</key>
 			<array>
 				<string>4D5A8D3D1A3C11A5002B69A6</string>
-				<string>6A37D73C450732CBCA55E3B0</string>
+				<string>666F94AF95F7F04B0DBB7112</string>
+				<string>074612EBE5A8389BF5AD51FE</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -332,6 +403,7 @@
 				<string>4D1B63061A63E2460071CFD0</string>
 				<string>4D2640E519FD3C8F00CB4A7F</string>
 				<string>4D1B63101A63EF680071CFD0</string>
+				<string>4D1D422D1A640BF000262EB2</string>
 				<string>4D426D861A63D929002B793E</string>
 				<string>4D1B630E1A63ECF90071CFD0</string>
 			</array>
@@ -351,6 +423,7 @@
 				<string>4D2640D519FD3C8F00CB4A7F</string>
 				<string>4D2640D619FD3C8F00CB4A7F</string>
 				<string>A6195DECD54B20CB8B2E2256</string>
+				<string>C5F0509D880710E71CDC60A5</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -965,6 +1038,7 @@
 		<dict>
 			<key>children</key>
 			<array>
+				<string>4D1D422E1A640E4E00262EB2</string>
 				<string>4D426D881A63D95F002B793E</string>
 				<string>4DB06A7E1A3D8CE700B22B76</string>
 				<string>4D2640DF19FD3C8F00CB4A7F</string>
@@ -1185,6 +1259,7 @@
 			<array>
 				<string>4D1B63091A63E5B00071CFD0</string>
 				<string>4D1B63111A63F0130071CFD0</string>
+				<string>4D1D422A1A640AD100262EB2</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1308,12 +1383,30 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>6A37D73C450732CBCA55E3B0</key>
+		<key>4DF1E7C31A641C36001A0AD5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>SimpleForm-Bridging-Header.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>666F94AF95F7F04B0DBB7112</key>
 		<dict>
 			<key>fileRef</key>
-			<string>FA54D78D933C2BEBEBA585B2</string>
+			<string>E292A9C9EDBAD67324A6C431</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Weak</string>
+				</array>
+			</dict>
 		</dict>
 		<key>85FEB4C0874ADA8A532D58DE</key>
 		<dict>
@@ -1358,7 +1451,8 @@
 		<dict>
 			<key>children</key>
 			<array>
-				<string>FA54D78D933C2BEBEBA585B2</string>
+				<string>E292A9C9EDBAD67324A6C431</string>
+				<string>ED5A5FE3E45A6F5551477B80</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1397,7 +1491,44 @@ fi
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
 		</dict>
-		<key>FA54D78D933C2BEBEBA585B2</key>
+		<key>C5F0509D880710E71CDC60A5</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>E292A9C9EDBAD67324A6C431</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>ED5A5FE3E45A6F5551477B80</key>
 		<dict>
 			<key>explicitFileType</key>
 			<string>archive.ar</string>

@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import MBProgressHUD
+import FontAwesomeKit
 
 /**
 *  Head Up Display
