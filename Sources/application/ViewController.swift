@@ -60,6 +60,7 @@ class SigninContext {
 
 class ViewController: UIViewController, UITextFieldDelegate, SigninButtonViewControllerDelegate {
     
+    @IBOutlet private weak var settingButton: UIButton!
     @IBOutlet private weak var emailField: UITextField!
     @IBOutlet private weak var passwordField: UITextField!
     @IBOutlet private weak var passwordVerificationField: UITextField!
@@ -86,6 +87,16 @@ class ViewController: UIViewController, UITextFieldDelegate, SigninButtonViewCon
         self.passwordField.delegate = self
         self.passwordVerificationField.delegate = self
         self.signinButton?.delegate = self
+        
+        setupHandler()
+    }
+    
+    private func setupHandler() {
+        settingButton.addTarget(self, action: "openSetting", forControlEvents: .TouchUpInside)
+    }
+    
+    func openSetting() {
+        navigationController?.pushViewController(SettingStoryBoard().viewController, animated: true)
     }
     
     // MARK: - UITextFieldDelegate
