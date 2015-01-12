@@ -13,21 +13,27 @@ final class SingleTextFormStoryBoard {
     let storyboard: UIStoryboard
     let viewController: SingleTextFormTableViewController
     
-    init(mode: AccountSettingMode) {
+    init(mode: SettingMode) {
         self.storyboard = UIStoryboard(name: "SingleTextForm", bundle: NSBundle(forClass: SingleTextFormTableViewController.self))
         self.viewController =
             self.storyboard.instantiateViewControllerWithIdentifier("SingleTextFormTableViewController") as SingleTextFormTableViewController
         
-        self.viewController.mode = mode
+        self.viewController.settingMode = mode
     }
 }
 
-class SingleTextFormTableViewController: UITableViewController {
+class SingleTextFormTableViewController: UITableViewController, EditButtonDataSource, EditButtonDelegate {
     
     @IBOutlet private weak var anyTextField: UITextField!    
     @IBOutlet weak var editButtonView: UIView!
     
-    private var mode: AccountSettingMode!
+    var settingMode: SettingMode!
+    
+    var scope = SettingFormViewScope()
+    
+    var context: SettingFormViewScope {
+        return scope
+    }
     
     private weak var editButton: EditButtonViewController!
     
@@ -39,13 +45,18 @@ class SingleTextFormTableViewController: UITableViewController {
     }
     
     private func setupLayout() {
-        navigationItem.title = mode.toNavigationTitle()
-        anyTextField.placeholder = mode.textFieldPlaceholder
+        navigationItem.title = settingMode.toNavigationTitle()
+        anyTextField.placeholder = settingMode.textFieldPlaceholder
     }
     
     private func setupEditButton() {
         if editButton != nil { return }
         editButton = EditButtonStoryBoard().viewController
+        editButton.delegate = self
+        editButton.dataSource = self
         self.showContainerViewController(editButton, parentView: editButtonView)
     }
+    
+    func execSunccessEvent() {}
+    func execErrorEvent(error: NSError) {}
 }

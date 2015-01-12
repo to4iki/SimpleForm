@@ -20,9 +20,17 @@ final class PasswordFormStoryBoard {
     }
 }
 
-class PasswordFormTableViewController: UITableViewController {
+class PasswordFormTableViewController: UITableViewController, EditButtonDataSource, EditButtonDelegate {
     
     @IBOutlet weak var editButtonView: UIView!
+    
+    var settingMode: SettingMode! = .Password
+    
+    var scope = SettingFormViewScope()
+    
+    var context: SettingFormViewScope {
+        return scope
+    }
     
     private weak var editButton: EditButtonViewController!
     
@@ -35,6 +43,11 @@ class PasswordFormTableViewController: UITableViewController {
     private func setupEditButton() {
         if editButton != nil { return }
         editButton = EditButtonStoryBoard().viewController
+        editButton.delegate = self
+        editButton.dataSource = self
         self.showContainerViewController(editButton, parentView: editButtonView)
     }
+    
+    func execSunccessEvent() {}
+    func execErrorEvent(error: NSError) {}
 }
