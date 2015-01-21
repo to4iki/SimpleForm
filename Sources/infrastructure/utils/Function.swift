@@ -18,7 +18,7 @@ class Function {
     :param: action
     */
     class func debounce(delay: NSTimeInterval, queue: dispatch_queue_t, action: (() -> ())) -> (() -> ()) {
-        var lastFireTime:dispatch_time_t = 0
+        var lastFireTime: dispatch_time_t = 0
         let dispatchDelay = Int64(delay * Double(NSEC_PER_SEC))
         
         return {
@@ -38,13 +38,19 @@ class Function {
         }
     }
     
-    func delay(delay:Double, closure:()->()) {
+    /**
+    delay closure
+    
+    :param: delay
+    :param: action
+    */
+    func delay(delay: Double, action: ()->()) {
         dispatch_after(
             dispatch_time(
                 DISPATCH_TIME_NOW,
                 Int64(delay * Double(NSEC_PER_SEC))
             ),
-            dispatch_get_main_queue(), closure)
+            dispatch_get_main_queue(), action)
     }
 }
 

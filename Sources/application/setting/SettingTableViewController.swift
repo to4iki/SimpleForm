@@ -20,11 +20,29 @@ final class SettingStoryBoard {
     }
 }
 
-class SettingTableViewController: UITableViewController {
-
+class SettingTableViewController: UITableViewController, DeleteButtonDelegate {
+    
+    weak var deleteButton: DeleteButtonViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupDeleteButton()
     }
+    
+    private func setupDeleteButton() {
+        for subView in childViewControllers {
+            switch subView {
+            case let subView as DeleteButtonViewController:
+                deleteButton = subView
+                deleteButton?.delegate = self
+            default:
+                break
+            }
+        }
+    }
+    
+    // MARK: - UITableViewDataSource
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAtIndexPath: indexPath)
@@ -42,7 +60,17 @@ class SettingTableViewController: UITableViewController {
     private func openForm(mode: SettingMode) {
         switch mode {
         case .Password: navigationController?.pushViewController(PasswordFormStoryBoard().viewController, animated: true)
-        default: navigationController?.pushViewController(SingleTextFormStoryBoard(mode: mode).viewController, animated: true)  
+        default: navigationController?.pushViewController(SingleTextFormStoryBoard(mode: mode).viewController, animated: true)
         }
+    }
+    
+    // MARK: - DeleteButtonDelegate
+    
+    func onDeleteSuccess() {
+        Hud.showSuccessWithStatus(self.view, text: "Success", afterDelay: NSTimeInterval(2.0))
+    }
+    
+    func onDeleteError(error: String) {
+        Dialog.alert(self, title: "Error", message: error)
     }
 }

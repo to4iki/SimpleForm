@@ -94,6 +94,30 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="Cgb-Y2-DeD">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="njQ-1w-UPg">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="njQ-1w-UPg" id="twg-DN-rJT">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lsh-yS-gT8">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                                    <connections>
+                                                        <segue destination="XJf-cW-c1N" kind="embed" id="hpG-Kg-ckj"/>
+                                                    </connections>
+                                                </containerView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Lsh-yS-gT8" firstAttribute="top" secondItem="twg-DN-rJT" secondAttribute="top" id="7DT-Bj-9no"/>
+                                                <constraint firstAttribute="bottom" secondItem="Lsh-yS-gT8" secondAttribute="bottom" id="ABf-Wx-3Ev"/>
+                                                <constraint firstItem="Lsh-yS-gT8" firstAttribute="leading" secondItem="twg-DN-rJT" secondAttribute="leading" id="Ggx-3o-AFP"/>
+                                                <constraint firstAttribute="trailing" secondItem="Lsh-yS-gT8" secondAttribute="trailing" id="zBa-Uu-jnp"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="EHF-cl-J2m" id="vmw-y9-otU"/>
@@ -122,6 +146,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="39s-Re-Nm6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="226" y="443"/>
+        </scene>
+        <!--Delete Button View Controller-->
+        <scene sceneID="Lh0-ob-Jis">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="XJf-cW-c1N" customClass="DeleteButtonViewController" customModule="SimpleForm" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YKS-Cq-wIF"/>
+                        <viewControllerLayoutGuide type="bottom" id="dlR-6w-TDq"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="am5-of-1rC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cy5-Lx-uyS">
+                                <rect key="frame" x="165" y="7" width="44" height="30"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="Cy5-Lx-uyS" secondAttribute="centerY" id="6VU-LD-3qV"/>
+                            <constraint firstAttribute="centerX" secondItem="Cy5-Lx-uyS" secondAttribute="centerX" id="wiJ-0J-zM6"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="deleteButton" destination="Cy5-Lx-uyS" id="gbd-Lz-0fP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f6a-jZ-Xqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1108.5" y="442.5"/>
         </scene>
     </scenes>
 </document>

@@ -360,6 +360,7 @@
 			<array>
 				<string>4D1DF7151A5C1ED800283CD7</string>
 				<string>4D2640E019FD3C8F00CB4A7F</string>
+				<string>4DE1EC5B1A7003B300003CE3</string>
 				<string>4D1D42301A640EA100262EB2</string>
 				<string>4D2640FF19FD4DF100CB4A7F</string>
 				<string>4D1B630B1A63E5B00071CFD0</string>
@@ -1112,6 +1113,7 @@
 			<array>
 				<string>4D6267701A63E1210036E2F3</string>
 				<string>4D426D831A63D88E002B793E</string>
+				<string>4DE1EC5A1A7003B300003CE3</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1402,6 +1404,26 @@
 		<dict>
 			<key>fileRef</key>
 			<string>4DC4E5531A3D807C00838A7A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4DE1EC5A1A7003B300003CE3</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>DeleteButtonViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4DE1EC5B1A7003B300003CE3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4DE1EC5A1A7003B300003CE3</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>

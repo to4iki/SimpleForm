@@ -8,3 +8,4 @@ template simple form design
 - [jdg/MBProgressHUD](https://github.com/jdg/MBProgressHUD)
 - [PrideChung/FontAwesomeKit](https://github.com/PrideChung/FontAwesomeKit)
 - [Masonry/Snap](https://github.com/Masonry/Snap)
+- [zwaldowski/BlocksKit](https://github.com/zwaldowski/BlocksKit)
